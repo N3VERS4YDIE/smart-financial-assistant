@@ -16,6 +16,7 @@ class Settings:
     siigo_partner_id: str
     siigo_base_url: str
     llm_model: str
+    llm_max_tokens: int
     llm_api_key: str
     llm_base_url: str
     embedding_model: str
@@ -55,6 +56,7 @@ def load_settings() -> Settings:
         siigo_partner_id=_env("SIIGO_PARTNER_ID", "SandboxSiigoApi"),
         siigo_base_url=_env("SIIGO_BASE_URL", "https://api.siigo.com"),
         llm_model=_env("LLM_MODEL", "openai/gpt-4.1-mini"),
+        llm_max_tokens=int(_env("LLM_MAX_TOKENS", "4096")),
         llm_api_key=llm_api_key,
         llm_base_url=_env("LLM_BASE_URL", "https://openrouter.ai/api/v1"),
         embedding_model=_env(

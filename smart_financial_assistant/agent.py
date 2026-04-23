@@ -13,6 +13,7 @@ def build_agent(settings: Settings, tools: list[BaseTool]):
     """Create and return the financial assistant agent with configured tools."""
     llm = ChatOpenAI(
         model=settings.llm_model,
+        max_tokens=settings.llm_max_tokens,
         api_key=settings.llm_api_key,
         base_url=settings.llm_base_url,
         temperature=0.1,
